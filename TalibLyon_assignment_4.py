@@ -25,9 +25,42 @@ print("Study Hours:", study_hours)
 print("Social Points:", social_points)
 print("Stress Level:", stress_level)
 
+# ========================================
+# Decision 1: Course Load Selection
+# ========================================
 
-#test anything
-print("hello")
+print("\nMission Planning Time!")
+print("Choose your mission load:")
+print("B. Light")
+print("A. Standard")
+print("S. Heavy")
+
+choice = input("Enter S, A, or B: ")
+
+# Check course load choice and adjust stats
+if choice == "B":
+    study_hours -= 2
+    stress_level -= 5
+    print("You chose a Light mission load. Low stress, Easy pass")
+
+elif choice == "A":
+    study_hours += 2
+    stress_level += 5
+    print("You chose a Standard mission load. Balanced approach.")
+
+elif choice == "S":
+    study_hours += 5
+    
+    # Students with lower GPA struggle more with heavy loads
+    if current_gpa >= 3.0:
+        stress_level += 10
+    else:
+        stress_level += 25  # Low GPA + heavy load = much more stress
+    
+    print("You chose a Heavy mission load. Huge curse ahead!")
+
+else:
+    print("Invalid option. No changes were made.")
 
 
 
