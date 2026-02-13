@@ -104,4 +104,38 @@ if strategy in study_options:
 else:
     print("Invalid strategy. No changes were made.")
 
+# ========================================
+# Final Semester Assessment
+# ========================================
+
+print("\nFinal Semester Results...")
+print("Final GPA:", current_gpa)
+print("Final Study Hours:", study_hours)
+print("Final Social Points:", social_points)
+print("Final Stress Level:", stress_level)
+
+# Identity operator used for type checking
+if type(current_gpa) is float:
+
+    # Nested decision level 1
+    if current_gpa >= 3.5 and stress_level < 50:
+        
+        # Nested decision level 2
+        if social_points > 15:
+            print("You became a Special Grade Sorcerer! Elite status achieved!")
+        else:
+            print("You became a powerful Grade 1 Sorcerer, but you walk alone.")
+
+    elif current_gpa >= 2.5:
+        
+        if stress_level >= 70:
+            print("You passed the semester, but barely survived the curses gained...")
+        else:
+            print("You are a steady Grade 2 Sorcerer. Growth continues.")
+
+    else:
+        print("You were overwhelmed and destroyed by the disaster curses... !")
+
+else:
+    print("Error: GPA data type incorrect.")
 
