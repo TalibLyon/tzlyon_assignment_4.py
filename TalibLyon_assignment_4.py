@@ -62,5 +62,46 @@ elif choice == "S":
 else:
     print("Invalid option. No changes were made.")
 
+# ========================================
+# Decision 2: Study Strategy Selection
+# ========================================
+
+print("\nTime to choose your cursed strategy!")
+print("Options: CursedEnergyDrills, SquadTraining, DomainExpansionRush")
+
+# List of valid study strategies
+study_options = ["CursedEnergyDrills", "SquadTraining", "DomainExpansionRush"]
+
+strategy = input("Choose your strategy: ")
+
+# Validate using membership operator
+if strategy in study_options:
+    
+    # Cursed Energy Drills: Strong GPA boost, low social gain
+    if strategy == "CursedEnergyDrills":
+        current_gpa += 0.2
+        social_points -= 2
+        print("You mastered cursed energy control. GPA increased!")
+
+    # SquadTraining: Balanced growth
+    elif strategy == "SquadTraining":
+        current_gpa += 0.1
+        social_points += 3
+        print("Training with your squad improved both skill and bonds!")
+
+    # Domain Expansion Rush: Risky high-pressure training
+    elif strategy == "DomainExpansionRush":
+        # Logical operators used here
+        if stress_level > 50 and study_hours < 10:
+            current_gpa -= 0.2
+            print("Your domain collapsed under pressure!")
+        else:
+            current_gpa += 0.05
+            print("You barely maintained your domain technique!")
+        
+        social_points -= 3
+
+else:
+    print("Invalid strategy. No changes were made.")
 
 
